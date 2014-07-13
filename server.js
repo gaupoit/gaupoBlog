@@ -1,14 +1,18 @@
 var express = require('express');
+	blog = require('./routes/blog');
 
 var app = express();
 
-app.get('/blogs', function (request, response) {
-	response.send([{name: 'firstBlog'}, {name: 'secondBlog'}]);
+app.configure(function() {
+	app.use(express.logger('dev'));
+	app.use(express.bodyParser());
 });
 
-app.get('/blogs/:id', function (request, response) {
-	response.send({id:request.param.id, name: "Blog", description: "First Blog"});
-});
+app.get('/blogs', blog.findAll);
+app.get('/blogs/:id', blog.findById);
+app.post('/blogs', blog.addBlog);
+app.put('/blogs/:id', blog.updateBlog);
+app.delete('/blogs/:id', blog.deleteBlog);
 
 app.listen(8888);
 
