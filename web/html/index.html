@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html data-ng-app="gaupo_App">
+<head>
+<title>Gaupoit</title>
+<meta name="author" content="Gaupoit">
+<meta name="keywords" content="SPA, Single Page Application, AngularJS, NodeJS, NoSQL, MongoDB">
+<link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico"></link>
+<link rel="stylesheet"  type="text/css" href="../css/main.css"></link>
+<link rel="stylesheet"  type="text/css" href="../css/syntax.css"></link>
+
+</head>
+<body data-ng-controller="HomeController">
+	<header>
+		<!--- Avarta -->
+		<p class="meta">
+			<img class="avarta_img" src="../images/gaupo.jpg" alt="Gaupoit">
+		</p>
+		<h1>
+			<a href="gaupo_files/gaupoit.htm"><strong>Gaupo</strong></a>
+		</h1>
+		<nav>
+			<ul>
+				<li><a href="">Archive</a></li>
+				<li><a href="">Ideas</a></li>
+				<li><a href="">About</a></li>
+			</ul>
+		</nav>
+		<div class="social">
+			<ul>
+			<li><a href="http://www.github.com/gaupoit" target="_blank"><img src="../images/github_32.png" alt="Github" height="25" width="25"></a></li>
+				<li><a href="http://www.twitter.com/gaupoit" target="_blank"><img src="../images/twitter_32.png" alt="Twitter" height="25" width="25"></a></li>
+				<li><a href="http://www.linkedin.com/in/gaupoit" target="_blank"><img src="../images/linkedin_32.png" alt="Linkedin" height="25" width="25"></a></li>
+				<li><a href="http://www.gaupo.it/feed.xml"><img src="../images/rss_32.png" alt="RSS" height="25" width="25"></a></li>
+			</ul>
+		</div>
+	</header>
+	<!-- <article>
+    <p class="meta date">
+      <strong>Apr 01</strong>
+      2014
+    </p>
+    <h2><a href="http://www.wulder.nl/blog/2013/08/19/angularjs-bootstrap-tab-directive-and-lazy-loading.html">Just do it</a></h2>
+    <p>Let do it now. I believe you can do it weel, baby.</p>
+  </article>
+  <article>
+    <p class="meta date">
+      <strong>Apr 19</strong>
+      2014
+    </p>
+    <h2><a href="http://www.wulder.nl/blog/2013/08/19/angularjs-bootstrap-tab-directive-and-lazy-loading.html">Marketing is my passion</a></h2>
+    <p>I was looking for an <a href="http://www.angularjs.org/" target="_blank" title="AngularJS">AngularJS</a> tab directive based on Twitter Bootstrap’s markup and CSS that supports lazy loading. So the data of a tab should only be loaded when the tab is active. There are some frameworks like <a href="http://angular-ui.github.io/bootstrap/" target="_blank" title="Angular UI">Angular UI</a> and <a href="http://mgcrea.github.io/angular-strap/" target="_blank" title="AngularStrap">AngularStrap</a> that do have tab directives but none of them supports lazy loading. That’s why I created a tab directive that supports lazy loading.</p>
+  </article> -->
+  	<article data-ng-repeat="blog in blogs">
+  		  <p class="meta date">
+      <strong>{{blog.createdDate}}</strong>
+      2014      
+    </p>
+    <h2><a href="http://www.wulder.nl/blog/2013/08/19/angularjs-bootstrap-tab-directive-and-lazy-loading.html">{{blog.name}}</a></h2>
+    <p>{{blog.content}}</p>
+  	</article>
+</body>
+<script type="text/javascript" src="../lib/angular/angular.js"></script>
+<script type="text/javascript" src="../lib/angular-route/angular-route.js"></script>
+<script type="text/javascript" src="../app/app.js"></script>
+<script type="text/javascript" src="../app/controllers/HomeController.js"></script>
+</html>
