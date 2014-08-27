@@ -11,8 +11,9 @@ Install :
 + MongoDB
 
 Steps :
-+ Update libaries by bower "bower install"
++ Install node_modules by npm "npm install"
++ Install libaries by bower "bower install"
 + run mongodb
-+ run command "node server" 
-+ website is running on port 8888
++ run nodejs "node server" 
++ website will be running on port 8888
  
