@@ -1,0 +1,9 @@
+<article data-ng-repeat="blog in blogs" gaupo-fuck-code>
+    <p class="meta date">
+        <strong>{{blog.createdDate}}</strong>
+        2014
+    </p>    
+    <h2><a ng-href="#/blog/{{blog._id}}">{{blog.title}}</a>
+    </h2>
+    <p ng-bind-html="blog.description"></p>
+</article>

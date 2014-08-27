@@ -1,53 +1,82 @@
 <!DOCTYPE HTML>
 <html data-ng-app="gaupo_App">
-<head>
-<title>Gaupoit</title>
-<meta name="author" content="Gaupoit">
-<meta name="keywords" content="SPA, Single Page Application, AngularJS, NodeJS, NoSQL, MongoDB">
-<link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico"></link>
-<link rel="stylesheet"  type="text/css" href="../css/main.css"></link>
-<link rel="stylesheet"  type="text/css" href="../css/syntax.css"></link>
 
+<head>
+    <title>Gaupoit</title>
+    <meta name="author" content="Gaupoit">
+    <meta name="keywords" content="SPA, Single Page Application, AngularJS, NodeJS, NoSQL, MongoDB">
+    <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico"></link>    
+    <link rel="stylesheet" type="text/css" href="../css/main.css"></link>
+    <link rel="stylesheet" type="text/css" href="../css/syntax.css"></link>
+    <link rel="stylesheet" type="text/css" href="../lib/ckeditor/plugins/codesnippet/lib/highlight/styles/monokai.css"></link>
+    <script type="text/javascript" src="../lib/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js"></script>
+   
 </head>
-<body data-ng-controller="HomeController">
-	<header>
-		<!--- Avarta -->
-		<p class="meta">
-			<img class="avarta_img" src="../images/gaupo.jpg" alt="Gaupoit">
-		</p>
-		<h1>
-			<a href="gaupo_files/gaupoit.htm"><strong>Gaupo</strong></a>
-		</h1>
-		<nav>
-			<ul>
-				<li><a href="">Archive</a></li>
-				<li><a href="">Ideas</a></li>
-				<li><a href="">About</a></li>
-			</ul>
-		</nav>
-		<div class="social">
-			<ul>
-			<li><a href="http://www.github.com/gaupoit" target="_blank"><img src="../images/github_32.png" alt="Github" height="25" width="25"></a></li>
-				<li><a href="http://www.twitter.com/gaupoit" target="_blank"><img src="../images/twitter_32.png" alt="Twitter" height="25" width="25"></a></li>
-				<li><a href="http://www.linkedin.com/in/gaupoit" target="_blank"><img src="../images/linkedin_32.png" alt="Linkedin" height="25" width="25"></a></li>
-				<li><a href="http://www.gaupo.it/feed.xml"><img src="../images/rss_32.png" alt="RSS" height="25" width="25"></a></li>
-			</ul>
-		</div>
-	</header>
-  	<article data-ng-repeat="blog in blogs">
-  		  <p class="meta date">
-      <strong>{{blog.createdDate}}</strong>
-      2014      
-    </p>
-    <h2><a href="http://www.wulder.nl/blog/2013/08/19/angularjs-bootstrap-tab-directive-and-lazy-loading.html">{{blog.name}}</a></h2>
-    <p>{{blog.content}}</p>
-  	</article>
-  	
+
+<body>  
+<div>
+   <header>
+        <p class="meta">
+            <img class="avarta_img" src="../images/gaupo.jpg" alt="Gaupoit">
+        </p>
+        <h1>
+            <a href="#/">
+                <strong>Gaupo</strong>
+            </a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="">Archive</a>
+                </li>
+                <li><a href="">Ideas</a>
+                </li>
+                <li><a href="">About</a>
+                </li>
+                 <li><a ng-href="#/admin/blog">Admin</a>
+                </li>
+            </ul>           
+        </nav>
+        <div class="social">
+            <ul>
+                <li>
+                    <a href="http://www.github.com/gaupoit" target="_blank">
+                        <img src="../images/github_32.png" alt="Github" height="25" width="25">
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.twitter.com/gaupoit" target="_blank">
+                        <img src="../images/twitter_32.png" alt="Twitter" height="25" width="25">
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.linkedin.com/in/gaupoit" target="_blank">
+                        <img src="../images/linkedin_32.png" alt="Linkedin" height="25" width="25">
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.gaupo.it/feed.xml">
+                        <img src="../images/rss_32.png" alt="RSS" height="25" width="25">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div data-ng-view=""></div>
+ </div> 
 </body>
 <script type="text/javascript" src="../lib/angular/angular.js"></script>
 <script type="text/javascript" src="../lib/angular-route/angular-route.js"></script>
+<script type="text/javascript" src="../lib/angular-sanitize/angular-sanitize.js"></script>
+<script type="text/javascript" src="../lib/angular-resource/angular-resource.js"></script>
+<script type="text/javascript" src="../lib/requirejs/require.js"></script>
 <script type="text/javascript" src="../app/app.js"></script>
 <script type="text/javascript" src="../lib/ckeditor/ckeditor.js"></script>
 <script type="text/javascript" src="../app/controllers/HomeController.js"></script>
+<script type="text/javascript" src="../app/controllers/BlogsController.js"></script>
+<script type="text/javascript" src="../app/controllers/admin/_blogController.js"></script>
 <script type="text/javascript" src="../app/directives/ng_ckEditor.js"></script>
+<script type="text/javascript" src="../app/directives/ng_gaupoFuck.js"></script>
+ <script>
+ </script>
 </html>
+    

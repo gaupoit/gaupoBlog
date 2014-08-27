@@ -22,7 +22,7 @@ db.open(function (err, db) {
 
 exports.findAll = function (request, response) {
 	db.collection('blogs', function (err, collection) {
-		collection.find().toArray(function (err, items){
+		collection.find().toArray(function (err, items){			
 			response.send(items);
 		});
 	})
@@ -86,22 +86,7 @@ exports.deleteBlog = function (request, response) {
 	});
 }
 
-var populateDB = function () {
-	var blogs = [
-	{
-		name: "Six important things in Entity Framework",
-		author: "ThinhNP",
-		createdDate: "20140708",
-		content: "Content ContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContent"
-	},
-	{
-		name: "What is Entity Framework",
-		author: "ThinhNP",
-		createdDate: "20140708",
-		content: "Content ContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContent"
-	}
-	];
-
+var populateDB = function () {	
 	db.collection('blogs', function (err, collection) {
 		collection.remove({}, (function (error) {
 			if (error) {
@@ -109,7 +94,6 @@ var populateDB = function () {
 			} else {
 				console.log('Existing collection deleted');
 			}
-		}));
-		collection.insert(blogs, {safe: true}, function (err, result){});
+		}));		
 	});
 };
